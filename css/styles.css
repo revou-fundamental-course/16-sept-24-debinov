@@ -1,4 +1,125 @@
 .logo-icon{
-    width: 100px;
+    width: 60px;
+    height: 60px;
+    background-image: url(../assets/icon.jpg);
+    border-radius: 55%;
+    background-position: center;
+    background-size: cover;
+}
+
+.head{
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+
+.head>.fitur{
+    display: flex;
+}
+
+nav{
+    display: flex;
+}
+
+nav>a{
+    border: 1px solid;
+    padding: 8px;
+    color: black;
+    text-decoration: none;
+}
+
+.form-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 7px;
+}
+
+.form-input, .preview{
+    width: 40%;
+}
+
+.form-field{
+    margin-bottom: 15px;
+}
+
+label{
+    display: inline-block;
+    width: 110px;
+}
+
+input[type="text"],
+input[type="date"],
+textarea{
+
+    width: calc(100% -100px);
+    padding: 8px;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+textarea{
+    resize: vertical;
     height: 100px;
+}
+.preview{
+    border: 1px solid black;
+    padding: 20px;
+    background-color: white;
+}
+
+button{
+    width: 100%;
+    padding: 15px 25px;
+    border: 1px solid;
+    background-color: #dfdfdf;
+    color: #000000;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover{
+    background-color: #29f7ed;
+
+}
+
+.banner{
+    border: 2px solid;
+    background-position: center;
+    background-size: cover;
+    height: 578px;
+}
+
+.img-slideshow{
+    width: 100%;
+}
+
+.button-slideshow{
+    height: 50px;
+    width: 120px;
+    margin: 6px;
+}
+
+.profile-headquarter{
+    height: 120px;
+    width: 120px;
+    border-radius: 55%;
+    border: 1px solid black;
+    background-size: cover;
+    background-position: center;
+    border-radius: 55%;
+}
+
+.profile-container{
+    display: flex;
+}
+
+.profile-container>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 50px;
+}
+
+.p_footer{
+    text-align: end;
 }

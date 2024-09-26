@@ -1,33 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css\styles.css">
 </head>
+
 <body>
-    <header>
+    <header class="head">
         <div class="logo-icon"></div>
 
-        <nav></nav>
+        <nav class="fitur">
+            <a href="#home">Home</a>
+            <a href="#profile">Our Profile</a>
+            <a href="#portofolio">Portofolio</a>
+            <a href="#message">Message</a>
+        </nav>
+
     </header>
-    
+    <hr>
     <main>
 
         <!-- Home -->
-         <section></section>
+        <section id="home">
+            <header>
+                <h1>Hi Debi, Welcome to my website</h1>
+            </header>
 
-         <!-- our profile -->
-          <section></section>
+            <article>
+                <p>Ini adalah website latihan pertama</p>
+                <!-- banner -->
+                <div>
+                    <img class="img-slideshow"
+                        src="https://images.unsplash.com/photo-1519060825752-c4832f2d400a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
 
-          <!-- portofolio -->
-           <section></section>
+                    <img class="img-slideshow"
+                        src="https://images.unsplash.com/photo-1592355591829-aaae33fcff1d?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
 
-           <!-- message us -->
-            <section></section>
+                    <img class="img-slideshow"
+                        src="https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+
+                    <img class="img-slideshow"
+                        src="https://images.unsplash.com/photo-1560792523-9b3e98060a4d?q=80&w=1388&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+
+                    <img class="img-slideshow"
+                        src="https://images.unsplash.com/photo-1559032195-42b455e61dfe?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+
+                    <button class="button-slideshow" onclick="plusDivs(-1)">Previous</button>
+                    <button class="button-slideshow" onclick="plusDivs(1)">Next</button>
+                </div>
+
+                <script>
+                    var slideIndex = 1;
+                    showDivs(slideIndex);
+
+                    function plusDivs(n) {
+                        showDivs((slideIndex += n))
+                    }
+
+                    function showDivs(n) {
+                        var i;
+                        var x = document.getElementsByClassName("img-slideshow");
+                        if (n > x.length) slideIndex = 1;
+                        else if (n < 1) slideIndex = x.length;
+
+                        console.log(slideIndex);
+                        for (i = 0; i < x.length; i++) {
+                            x[i].style.display = "none"
+                        }
+                        x[slideIndex - 1].style.display = "block";
+                    }
+                    setInterval(() => {
+                        plusDivs(1);
+                    }, 1000)
+                </script>
+            </article>
+        </section>
+
+        <!-- our profile -->
+        <section id="profile">
+            <header>
+                <h1>Our Headquarter</h1>
+            </header>
+
+            <div class="profile-container">
+                <div>
+                    <div class="profile-headquarter"></div>
+                    <p>Jakarta</p>
+                </div>
+
+                <div>
+                    <div class="profile-headquarter"></div>
+                    <p>Bandung</p>
+                </div>
+
+                <div>
+                    <div class="profile-headquarter"></div>
+                    <p>Surabaya</p>
+                </div>
+            </div>
+
+        </section>
+        <hr>
+        <!-- portofolio -->
+        <section id="portofolio">
+            <header>
+                <h1> Portofolio</h1>
+            </header>
+        </section>
+        <hr>
+        <!-- message us -->
+        <section>
+            <header>
+                <h1> Message Us</h1>
+            </header>
+
+            <div class="form-container">
+                <!-- form section -->
+                 
+                <div class="form-input">
+                    <form>
+                        <div class="form-field">
+                            <label for="name">Nama :</label>
+                            <input type="text" id="name" placeholder="Nama">
+                        </div>
+
+                        <div class="form-field">
+                            <label for="birthdate">Tanggal Lahir :</label>
+                            <input type="date" id="birthdate">
+                        </div>
+
+                        <div class="form-field">
+                            <label>Jenis Kelamin :</label>
+                            <input type="radio" name="gender" value="Laki-Laki"> Laki-Laki
+                            <input type="radio" name="gender" value="Perempuan"> Perempuan
+                        </div>
+
+                        <div class="form-field">
+                            <label for="message">Pesan :</label>
+                            <textarea id="message" placeholder="Pesan"></textarea>
+                        </div>
+
+                        <button type="button" onclick="form_Update()">Submit</button>
+                    </form>
+                </div>
+
+                <!-- preview section -->
+                <div class="preview">
+                    <p style="margin-bottom: 30px;"><strong>Current Time :</strong> <span id="output-time"></span></p>
+                    <p><strong>Nama :</strong> <span id="output-name"></span></p>
+                    <p><strong>Tanggal Lahir :</strong> <span id="output-birthdate"></span></p>
+                    <p><strong>Jenis Kelamin :</strong> <span id="output-gender"></span></p>
+                    <p><strong>Pesan :</strong> <span id="output-message"></span></p>
+                </div>
+            </div>
+        </section>
     </main>
+    <hr>
+
+    <footer>
+        <p class="p_footer">Created By Debi Ratnasari Novianti</p>
+    </footer>
+
+    <script src="js/script.js"></script>
 
 </body>
-
 </html>
